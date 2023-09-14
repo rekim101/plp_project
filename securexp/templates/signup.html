@@ -3,20 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Securex</title>
+    <link rel="stylesheet" href="static/signup.css">
+    <style>
+        h5{
+            color: red;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="lg:text-3xl text-xl font-semibold mb-6">sign up</h1>
-    <form action="" method="post">
-        {%csrf_token%}
-        <input type="text" name="username" placeholder="username" class="bg-gray-200-mb-2-shadow-none dark:bg-gray-800" style="border:5px solid">
-        <input type="email" name="email" placeholder="Email" class="bg-gray-200-mb-2-shadow-none dark:bg-gray-800" style="border:5px solid">
-        <input type="password" name="password" placeholder="password" class="bg-gray-200-mb-2-shadow-none dark:bg-gray-800" style="border:5px solid">
-        <input type="password" name="password2" placeholder="confirm password" class="bg-gray-200-mb-2-shadow-none dark:bg-gray-800" style="border:5px solid">
-        <button type="submit" class="bg-gradient-to-br from-pink-500 py-3"> sign up</button>
-        <div class="text-center mt-5 space-x-2">
-            <p class="tect-base">Do you have an account? <a href="#"> login</a></p>
+    <header id="main_body" class="the_main_frame">
+        <div class="top_section">
+          <nav class="card-header-pills logo_section">
+            <div class="topnav" id="myTopnav">
+              <a href="#home" class="active fa fa-home">Home</a>
+              <a href="#news">News</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>        
+            </div>
+          </nav>
         </div>
-    </form>
+    </header>
+    <div class="main_container">
+        <h1> SIGN UP </h1>
+        <hr>
+        <div>
+            {%for message in messages%}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
+        <div class="form_contatiner">
+            <form action="" method="POST">
+                {%csrf_token%}
+                <fieldset>
+                <label> Enter your first name: <input type="text" name="username" placeholder="Osername"> </label>
+                <label> Enter your second name: <input type="email" name="email" placeholder="Email"> </label>
+                <label> Enter your password: <input type="password" name="password" placeholder="Password"> </label>
+                <label> Confirlm your password: <input type="password" name="password2" placeholder="Confirm Password"> </label>
+                </fieldset>
+                <button type="submit" class="bg-gradient-to-br from-pink-500 py-3"> sign up</button>
+                <div class="text-center mt-5 space-x-2">
+                    <p class="tect-base">Do you have an account? <a href="/signin"> sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="static/signin.css.">
+</head>
+<body>
+    <!-- nav bar section-->
+
+    <header id="main_body" class="the_main_frame">
+        <div class="top_section">
+          <nav class="card-header-pills logo_section">
+            <div class="topnav" id="myTopnav">
+              <a href="#home" class="active fa fa-home">Home</a>
+              <a href="#news">News</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>        
+            </div>
+          </nav>
+        </div>
+    </header>
+    <!-- form sectiion-->
+    <div class="main_container">
+        <h1> SIGN IN</h1>
+        <hr>
+        <div class="form_container">
+            <form action="" method="POST">
+              <fieldset>
+                <label for="name">enter your name: <input type="text" name="username" placeholder="Username" id="name" required></label>
+                <label for="password">enter your password: <input type="password" name="password" placeholder="Password" id="password" required></label>
+              </fieldset>
+                <button type="submit">sign in</button>
+                <div class="text-center">
+                    <p class="text-base">Do you have an account?<a href="/signup"> sign up</a></p>
+                </div>
+                <div class="accept_terms">
+                    <label for="agree"><input type="checkbox" name="agree" id="agree" required> accept terms:</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>    
+</body>
+</html>
